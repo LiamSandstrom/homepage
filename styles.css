@@ -1,7 +1,16 @@
+:root {
+  --bg-color: white;
+  --bg-secondary-color: rgb(34, 33, 33);
+  --text-color: white;
+  --secondary-text-color: black;
+}
+
 body {
   min-height: 100%;
   margin: 0;
 }
+
+/** ----- TYPOGRAPHY ----- **/
 *,
 button,
 a {
@@ -19,6 +28,7 @@ h6,
 p,
 small {
   margin: 0;
+  color: var(--secondary-text-color);
 }
 
 body {
@@ -28,11 +38,12 @@ body {
 }
 
 h1 {
-  font-size: 2rem;
-  line-height: 1.2;
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 600;
 }
 h2 {
-  font-size: 1.75rem;
+  font-size: 2.3rem;
   line-height: 1.25;
 }
 h3 {
@@ -67,10 +78,10 @@ small {
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
   h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   h3 {
     font-size: 1.75rem;
@@ -87,5 +98,110 @@ small {
 
   p {
     font-size: 1rem;
+  }
+}
+
+/** ----- TYPOGRAPHY ----- **/
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    170deg,
+    var(--bg-secondary-color) 55%,
+    var(--bg-color) 55%
+  );
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+  padding: 50px;
+}
+
+.intro-img {
+  position: relative;
+  height: 350px;
+  width: 350px;
+  object-fit: cover;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.31)), url("Bellion.jpg");
+  background-size: cover;
+  background-position: 60% center;
+  background-repeat: no-repeat;
+
+  box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.421);
+  flex-shrink: 0;
+}
+
+.intro-name {
+  position: absolute;
+  bottom: 0;
+  color: var(--text-color);
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.intro-card {
+  padding: 20px;
+  background-color: var(--bg-color);
+  box-shadow: 1px 1px 7px 1px rgba(34, 33, 33, 0.492);
+  max-width: 700px;
+}
+
+.intro-card p {
+  font-size: 1.1rem;
+}
+
+.intro-about-me,
+.intro-text {
+  margin-bottom: 12px;
+}
+
+.icon-wrapper {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.icon-wrapper img {
+  height: 30px;
+  transition: transform 0.4s;
+}
+
+.icon-wrapper img:hover {
+  transition: transform 0.15s;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+@media (min-width: 700px) and (max-width: 980px) {
+  .intro-img {
+    float: left;
+    margin-right: 1rem;
+  }
+
+  .wrapper {
+    display: block;
+  }
+
+  .intro-card {
+    margin-top: 65px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 980px) {
+  .wrapper {
+    flex-direction: row;
+    gap: 0;
   }
 }
