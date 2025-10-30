@@ -122,6 +122,10 @@ header {
   align-items: center;
 
   gap: 10px;
+}
+
+.wrapper,
+.project-section-wrapper {
   padding: 50px;
 }
 
@@ -151,8 +155,12 @@ header {
 .intro-card {
   padding: 20px;
   background-color: var(--bg-color);
-  box-shadow: 1px 1px 7px 1px rgba(34, 33, 33, 0.492);
   max-width: 700px;
+}
+
+.intro-card,
+.project {
+  box-shadow: 1px 1px 7px 1px rgba(34, 33, 33, 0.492);
 }
 
 .intro-card p {
@@ -203,5 +211,76 @@ header {
   .wrapper {
     flex-direction: row;
     gap: 0;
+  }
+}
+
+.icon-s {
+  width: 20px;
+  height: 20px;
+}
+
+.project {
+  max-width: 350px;
+  transition: transform 0.2s;
+  will-change: transform;
+}
+
+.project:hover {
+  transform: scale(1.02);
+}
+
+.project-content {
+  padding: 10px 20px 30px;
+}
+
+.project-content h3 {
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+
+.fake-img {
+  height: 200px;
+  background-color: var(--bg-secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--bg-color);
+}
+
+.name-icon-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+}
+
+.project-section-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 700px) {
+  .project-section-wrapper h2 {
+    align-self: flex-start;
   }
 }
